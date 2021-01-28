@@ -79,22 +79,27 @@
         loginBtn.addEventListener('click', function () {
             const loginArea = document.getElementById('log-in-area');
             loginArea.style.display = 'none';
-            // const submitArea = document.getElementById('submit-era');
-            // submitArea.style.display='none';
+
+            
             const transactionArea = document.getElementById('transaction-area');
             transactionArea.style.display = 'block';
 
         })
+
         //withdraw event handling
         const withdrawButton = document.getElementById('addWithdraw');
         withdrawButton.addEventListener('click',function() {
             const withdrawNumber = getInputNumber('withdrawAmount');
 
+        //call function and send values for withdraw and send negative values in function for update balance
             updateSpanText('currentWithdraw',withdrawNumber);
             updateSpanText('currentBalance',-1*withdrawNumber);
 
+        //show empty text field after depositing and after withdrawing money
             document.getElementById('withdrawAmount').value="";
         })
+
+        //get input from withdraw field and convert it into floating number and return it
         function getInputNumber(id){
             const amount = document.getElementById(id).value;
             const amountNumber = parseFloat(amount);
@@ -106,13 +111,16 @@
          const depositButton = document.getElementById("addDeposit");
          depositButton.addEventListener("click", function(){
            const depositNumber = getInputNumber('depositAmount');
-      
+
+        //send values into updatespantext function
         updateSpanText('currentBalance',depositNumber);
         updateSpanText('currentDeposit',depositNumber);
 
+        //show empty text field after depositing and after withdrawing money
         document.getElementById('depositAmount').value="";
 
         })
+        //this function take id and deposit number and take inner text from deposit field and convert it into float type then add with the current number or balance
         function updateSpanText(id,depositNumber)
         {
             const current = document.getElementById(id).innerText;
