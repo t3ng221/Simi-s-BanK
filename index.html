@@ -18,15 +18,15 @@
     
     <!-- log in section -->
     <div id="log-in-area">
-        <h1 class="text-center bank-name">Simi Bank</h1>
-        <div class="submit-area" id="submit-era">
+        <h1 class="text-center">Simi Bank</h1>
+        <div class="submit-area">
             <h4>Log in Here</h4>
             <input type="text" class="form-control" placeholder="Email">
 
             <br>
             <input type="password" class="form-control" placeholder="Password">
             <br>
-            <button id="login" class="btn btn-success">LOOG IN</button>
+            <button id="login" class="btn btn-success">LOG IN</button>
         </div>
     </div>
 
@@ -37,20 +37,20 @@
             <div class="col-md-4">
                 <div class="deposit status">
                     <h5>Deposit</h5>
-                    <h2>$ <span id="currentDeposit">00</span></h2>
+                    <h2>৳ <span id="currentDeposit">00</span></h2>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="withdraw status">
                     <h5>Withdraw</h5>
-                    <h2>$ <span id="currentWithdraw">00</span></h2>
+                    <h2>৳ <span id="currentWithdraw">00</span></h2>
                 </div>
 
             </div>
             <div class="col-md-4 ">
                 <div class="balance status">
                     <h5>Balance</h5>
-                    <h2>$ <span id="currentBalance">1300</span></h2>
+                    <h2>৳ <span id="currentBalance">1300</span></h2>
                 </div>
             </div>
         </div>
@@ -80,7 +80,6 @@
             const loginArea = document.getElementById('log-in-area');
             loginArea.style.display = 'none';
 
-            
             const transactionArea = document.getElementById('transaction-area');
             transactionArea.style.display = 'block';
 
@@ -121,11 +120,11 @@
 
         })
         //this function take id and deposit number and take inner text from deposit field and convert it into float type then add with the current number or balance
-        function updateSpanText(id,depositNumber)
+        function updateSpanText(id,addedNumber)
         {
             const current = document.getElementById(id).innerText;
         const currentNumber = parseFloat(current);
-        const total = depositNumber+currentNumber;
+        const total = addedNumber+currentNumber;
         document.getElementById(id).innerText =total;
         }
     </script>
